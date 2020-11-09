@@ -9,5 +9,5 @@ sử dụng công nghệ ngôn nhữ lập trình html, css, bootstrap, php và 
                           + theo dõi đơn hàng, danh sách khách hàng.
 + trang clinet cho phép khách hàng.
 
-<img src="timi.png">
+<img src="database.png">
 
