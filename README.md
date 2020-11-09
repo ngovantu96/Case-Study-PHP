@@ -7,3 +7,4 @@
                           + theo dõi vốn đầu tư, lợi nhuận, hàng tồn kho,hàng mới nhập
                           + theo dõi đơn hàng, danh sách khách hàng.
 + trang clinet cho phép khách hàng.
+<img src="Untitled.png">
