@@ -8,3 +8,4 @@
                           + theo dõi đơn hàng, danh sách khách hàng.
 + trang clinet cho phép khách hàng.
 <img src="Untitled.png">
+<img src="img2.png">
