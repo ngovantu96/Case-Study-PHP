@@ -20,7 +20,7 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
          <div class="row">
-         <form action="cart.php" method="get">
+         <form action="cart2.php" method="get">
             <div class="col-6">
                 <img src="<?= $row['url']?>" alt="" width="250px" height="300px" name="image"></div>
                <input type="hidden" name="id" value="<?= $row['productID']?>">

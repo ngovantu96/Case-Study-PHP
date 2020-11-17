@@ -1,9 +1,9 @@
 <?php 
+ session_start();
  include 'header.php';
  include './database/connectionDB.php';
-    //  session_start();
     $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
-    $index = 0;
+    // var_dump($cart);die();
 
 ?>
 
@@ -13,7 +13,7 @@
             <?php  if ( count($_SESSION['cart'])== 0){ ?>
                <!-- <div class="col-md-6 ml-3 text-aling-center"><img src="images/cart-null.png" alt="" width="300px" height="10
                0px"></div> -->
-               giỏ hàng trống
+              <div class=""><h2>Giỏ Hàng Của Bạn Trống</h2></div> 
             <?php } else {  ?>
             <div class="table-responsive">
             <table class="table table-bordered">
@@ -47,7 +47,7 @@
                             </td>
                             <td><?= number_format($value['price']) ?>đ</td>
                             <td><?= number_format($value['price'] * $value['quantity']) ?>đ</td>
-                            <td><a href="cart.php?delete=<?= $value['id']?>" class="btn btn-danger btn-sm">Xóa</a></td>
+                            <td><a href="cart.php?id=<?= $value['id'];?>&action=delete" class="btn btn-danger btn-sm">Xóa</a></td>
                         </tr>
                         <?php } ?>
                     <tr>
