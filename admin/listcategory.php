@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include '../database/connectDB.php';
+    include 'header.php';
+    include 'database/connectDB.php';
     $query = "SELECT * FROM quanlybanhang.categorys";
     $stmt = $pdo->query($query);
   ?>
@@ -63,4 +63,4 @@
 </html>
 
 
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>

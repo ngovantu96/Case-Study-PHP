@@ -1,5 +1,5 @@
 <?php 
-    include '../database/connectDB.php';
+    include 'database/connectDB.php';
     if($_SERVER["REQUEST_METHOD"] =="POST"){
         $categoryID = $_POST['categoryID'];
         $categoryName = $_POST['categoryName'];

@@ -5,7 +5,6 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
     }
-
     $action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
 
     $quantity = (isset($_GET['quantity'])) ?  $_GET['quantity'] : '1';
@@ -34,12 +33,16 @@
     if($action === 'update'){
         $_SESSION['cart'][$id]['quantity'] = $quantity;
     }
+
     if(isset($_GET['delete'])){
         $id = $_GET['delete'];
         if($_SESSION['cart'][$id]){
         unset($_SESSION['cart'][$id]);
+        header("Location: cart.php");
+        // count($_SESSION['cart']) == 0;
+        // var_dump( count($_SESSION['cart']));die();
         }
-    
+        // var_dump( count($_SESSION['cart']))
      }
     
     

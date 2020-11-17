@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                     <p class="contact-action"><i class="fas fa-phone-alt mr-2"></i>HOTLINE <strong>+565 975 658</strong></p>
                 </div>
-                <div class="col-md-3 clearfix ml-2 mt-2">
+                <div class="col-md-3 clearfix ml-3 mt-2">
                     <ul class="login">
                         <li>
                             <a data-toggle="modal" data-target="#myModal" href="#">
@@ -37,14 +37,14 @@
                             <?php if (isset($_SESSION['cart'])) {
                                 echo count($_SESSION['cart']);
                                 } else {
-                                echo "(0)";
+                                echo "0";
                                     };
                             ?>
                         )</span>
                 </button></a>		  			
                 </div>
 
-                <div class="col-md-3 clearfix">
+                <!-- <div class="col-md-3 clearfix">
 
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -59,7 +59,7 @@
                                         <fieldset>
                                             <h3>Đăng Kí Tài Khoản</h3>
                                             <div class="form_content clearfix">
-                                                <!-- <h4>vui lòng điền đầy đủ thông tin</h4> -->
+                                                <h4>vui lòng điền đầy đủ thông tin</h4>
                                                 <p class="text">
                                                     <label for="email_create">Tên Đăng Nhập</label>
                                                     <span>
@@ -106,7 +106,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
 
     </section>
 
@@ -127,7 +127,7 @@
                 </li>
                 <li class="nav-item dropdown ml-5">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        Sản Phẩm
+                       Sản Phẩm 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="categoryboy.php">Trang Phục Nam</a>
@@ -142,9 +142,9 @@
             </ul>
 
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Tìm Kiếm" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tim Kiếm</button>
+            <form class="form-inline my-2 my-lg-0" action="search.php?action=search " method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Tìm Kiếm" aria-label="Search" name="keyword">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search" value="Tim Kiếm">
             </form>
 
         </div>

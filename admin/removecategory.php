@@ -1,5 +1,5 @@
 <?php 
-    include '../database/connectDB.php';
+    include 'database/connectDB.php';
     if(isset($_GET['id'])){
         $categoryID = $_GET['id'];
         $query = "DELETE FROM `quanlybanhang`.`categorys` WHERE `categoryID` = '$categoryID'";

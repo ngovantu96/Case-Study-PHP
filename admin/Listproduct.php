@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include '../database/connectDB.php';
+    include 'header.php';
+    include 'database/connectDB.php';
     
     $result ="SELECT count(productID) AS `total` FROM `quanlybanhang`.`sanphammoinhat`;";
     $row = $pdo->query($result)->fetch(PDO::FETCH_ASSOC);
@@ -103,4 +103,4 @@
 </html>
 
 
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>

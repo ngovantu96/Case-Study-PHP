@@ -1,5 +1,5 @@
 <?php 
-    include '../database/connectDB.php';
+    include 'database/connectDB.php';
     $query = "SELECT * FROM quanlybanhang.products";
   
     // $stmt = $pdo->query($query);

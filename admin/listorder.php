@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include '../database/connectDB.php';
+    include 'header.php';
+    include 'database/connectDB.php';
     $query = "SELECT `orderCode`, `orderDate`,`discount`, `customerName`, `quantity`,`buyPrice`,`statusName`,`totalMonney` 
     FROM (((`quanlybanhang`.`orders` inner join `quanlybanhang`.`customers` 
     on `orders`.`customerID` = `customers`.`customerID`)
@@ -79,4 +79,4 @@
             </div>
 </body>
 </html>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>

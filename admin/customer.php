@@ -1,6 +1,6 @@
 <?php
-    include __DIR__. "/../header.php";
-    include "../database/connectDB.php";
+    include "header.php";
+    include "database/connectDB.php";
 
     $query = "SELECT * FROM quanlybanhang.customers";
     $stmt = $pdo->query($query);
@@ -69,4 +69,4 @@
 </body>
 </html>
 
-<?php include __DIR__."/../footer.php";
+<?php include "footer.php";

@@ -1,5 +1,5 @@
 <?php
-      include '../database/connectDB.php';
+      include 'database/connectDB.php';
       $query = "SELECT * FROM quanlybanhang.customers";
       $stmt = $pdo->query($query);
       $row = $stmt->fetchAll(PDO::FETCH_ASSOC);

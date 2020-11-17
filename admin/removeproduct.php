@@ -1,5 +1,5 @@
 <?php 
-    include '../database/connectDB.php';
+    include 'database/connectDB.php';
     if(isset($_GET['id'])){
         $productID = $_GET['id'];
 

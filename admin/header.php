@@ -60,7 +60,7 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Thông Tin Nhân Viên</h6>
-            <a class="collapse-item" href="employees/employee.php">Danh Sách Nhân Viên</a>
+            <a class="collapse-item" href="employee.php">Danh Sách Nhân Viên</a>
           </div>
         </div>
       </li>
@@ -73,7 +73,7 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="order/listorder.php">Đơn Đặt Mua Hàng</a>
+            <a class="collapse-item" href="listorder.php">Đơn Đặt Mua Hàng</a>
             <a class="collapse-item" href="#">Đơn Hàng Đã Bán</a>
           </div>
         </div>
@@ -88,9 +88,9 @@
         <div id="collapseTabl" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="category/listcategory.php">Thể Loại</a>
-            <a class="collapse-item" href="pictures/Listpicture.php">Hình Ảnh</a>
-            <a class="collapse-item" href="product/Listproduct.php">Danh Sách Sản Phẩm</a>
+            <a class="collapse-item" href="listcategory.php">Thể Loại</a>
+            <a class="collapse-item" href="Listpicture.php">Hình Ảnh</a>
+            <a class="collapse-item" href="Listproduct.php">Danh Sách Sản Phẩm</a>
           </div>
         </div>
       </li>
@@ -98,7 +98,7 @@
       
         <!-- khách hàng -->
       <li class="nav-item">
-        <a class="nav-link" href="customers/customer.php">
+        <a class="nav-link" href="customer.php">
         <i class="far fa-address-card"></i><span class="app-menu__label ml-2">Khách Hàng</span>
         </a>
       </li>
@@ -223,12 +223,7 @@
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
-          </div>
-
-        
-
-        
-             
+          </div>   
           </div> 
 
         

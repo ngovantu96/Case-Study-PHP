@@ -1,6 +1,6 @@
 <?php
-    include __DIR__. "/../header.php";
-    include "../database/connectDB.php";
+    include "header.php";
+    include "database/connectDB.php";
     $query = "SELECT `employeeName`,`phone`,`email`,`address`,`levelID`,`lastLogin`, `loginName`,`password` 
     FROM `quanlybanhang`.`employees`;";
    
@@ -61,4 +61,4 @@
  </body>
  </html>        
 
-<?php include __DIR__."/../footer.php";
+<?php include "footer.php";

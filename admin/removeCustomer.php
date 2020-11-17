@@ -1,5 +1,5 @@
 <?php 
-    include "../database/connectDB.php";
+    include "database/connectDB.php";
     if($_GET['id']){
         $customerID = $_GET['id'];
         $query = "DELETE  FROM `quanlybanhang`.`customers` WHERE `customerID` = '$customerID';";

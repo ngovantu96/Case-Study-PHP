@@ -1,5 +1,5 @@
 <?php 
-      include '../database/connectDB.php';
+      include 'database/connectDB.php';
       if($_SERVER["REQUEST_METHOD"] =="POST"){
         $productName = $_POST['productName'];
         $buyPrice = $_POST['buyPrice'];

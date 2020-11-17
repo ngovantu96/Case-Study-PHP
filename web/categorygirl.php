@@ -2,14 +2,7 @@
     include 'header.php';
     include 'database/connectionDB.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
 <section id="product">
 	<div class="product">
 		<div class="row">
@@ -31,9 +24,9 @@
 								<div class="product-new">
 									<a class="product-img" href="">
 										<img src="<?= $row['url']?>" width="200px" height="250px">
-										<h3><?= $row['productName'] ?></h3>
+										<h5><?= $row['productName'] ?></h5>
 									</a>
-									<p> Giá Bán : <?=number_format($row['buyPrice']) ?></p>
+									<p><?=number_format($row['buyPrice']) ?></p>
 									<div class="caption">		
 										<p>
 											<a href="detailproduct.php?id=<?=$row['productID'];?>" class="btn btn-default btn-transparent" role="button">
@@ -53,6 +46,5 @@
 			</div>
 		</div>
 </section>
-</body>
-</html>
+
 <?php include 'footer.php'; ?>

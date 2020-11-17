@@ -1,8 +1,5 @@
 <?php 
-     include '../database/connectDB.php';
-    //  $query = "SELECT * FROM quanlybanhang.customers";
-    //  $stmt = $pdo->query($query);
-    //  $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     include 'database/connectDB.php';
         if($_SERVER["REQUEST_METHOD"] =="POST"){
         $customerName = $_POST['customerName'];
         $customerID = $_POST['customerID'];
