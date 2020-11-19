@@ -2,7 +2,9 @@
     include 'header.php';
     include 'database/connectDB.php';
     
-    $result ="SELECT count(productID) AS `total` FROM `quanlybanhang`.`sanphammoinhat`;";
+    $result ="SELECT count(productID) AS `total` FROM `quanlybanhang`.`products`;";
+    // $result ="SELECT * FROM `quanlybanhang`.`products`;";
+    $stmt = $pdo->query($result);
     $row = $pdo->query($result)->fetch(PDO::FETCH_ASSOC);
     $total_records = $row['total'];
     $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -19,12 +21,12 @@
   
     $start = ($current_page - 1) * $limit;
 
-    $query = "SELECT `productID`,`productName`,`buyPrice`,`dissciption`,`url`,`categoryName` 
-    FROM ((`quanlybanhang`.`products` INNER JOIN `quanlybanhang`.`pictures` ON `pictures`.`pictureID` = `products`.`pictureID`)
-    INNER JOIN `quanlybanhang`.`categorys` ON `categorys`.`categoryID` = `products`.`categoryID`) LIMIT $start, $limit";
+    $query = "SELECT `productID`,`productName`,`buyPrice`,`dissciption`,`image`,`categoryName`,`quantity` 
+    FROM (`quanlybanhang`.`products` 
+    INNER JOIN `quanlybanhang`.`categorys` ON `categorys`.`categoryID` = `products`.`categoryID`) ORDER BY `productID` ASC LIMIT $start,$limit ";
     $stmt = $pdo->query($query);
    
-    
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
 ?>
 <!DOCTYPE html>
@@ -51,27 +53,30 @@
                         <th>Tên Sản Phẩm</th>
                         <th>Giá Bán</th>
                         <th>Tiêu Đề</th>
+                        <th>Số Lượng</th>
                         <th>Thể Loại</th>
                         <th>Hành Động</th>
                     </tr>
                   </thead>
                   <tbody>
                   <?php
-                        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        foreach($result as $value) :
+                          // var_dump($row['productID']);die();
                      ?>
                             <tr>
-                                <td><?=$row['productID']?></td>
-                                <td><img src="<?=$row['url']?>" alt="" width="100px" height="150px"></td>
-                                <td><?=$row['productName']?></td>
-                                <td><?=number_format($row['buyPrice'])?>đ</td>
-                                <td><?=$row['dissciption']?></td>
-                                <td><?=$row['categoryName']?></td>
-                                <td><button type="button" class="btn btn-outline-secondary"><a href="editproduct.php?id=<?=$row['productID']?>">Edit</a></button> || 
-                                <button type="button" class="btn btn-outline-danger"><a href="removeproduct.php?id=<?= $row['productID']?>">Delete</a></button></td>
+                                <td><?=$value['productID']?></td>
+                                <td><img src="<?=$value['image']?>" alt="" width="100px" height="150px"></td>
+                                <td><?=$value['productName']?></td>
+                                <td><?=number_format($value['buyPrice'])?>đ</td>
+                                <td><?=$value['dissciption']?></td>
+                                <td><?=$value['quantity']?></td>
+                                <td><?=$value['categoryName']?></td>
+                                <td><button type="button" class="btn btn-outline-secondary"><a href="editproduct.php?id=<?=$value['productID']?>">Edit</a></button> || 
+                                <button type="button" class="btn btn-outline-danger"><a href="removeproduct.php?id=<?= $value['productID']?>">Delete</a></button></td>
                 
                             </tr>
                 
-                        <?php } ?>
+                        <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
@@ -80,7 +85,7 @@
            <ul class="pagination">
            <ul class="pagination">
 							 <?php if ($current_page > 1 && $total_page > 1){ ?>
-							<li class="page-item"><a class="page-link" href=" Listproduct.php?page=<?=($current_page-1)?>">Previous</a></li>
+							<li class="page-item"><a class="page-link" href="Listproduct.php?page=<?=($current_page-1)?>">Previous</a></li>
 							<?php } ?>
 							<?php for ($i = 1; $i <= $total_page; $i++){ ?>
 								<?php 	if ($i == $current_page){ ?>

@@ -33,7 +33,7 @@
                                <th>Thời Gian Đăng nhập</th>
                                <th>Tên Đăng Nhập</th>
                                <th>Mật Khẩu</th>
-                               <th>Hành Động</th>
+                               <!-- <th>Hành Động</th> -->
                            </tr>
                          </thead>
                          <tbody>
@@ -47,8 +47,8 @@
                                                 <td><?=$row['lastLogin']?></td>
                                                 <td><?=$row['loginName']?></td>
                                                 <td><?=$row['password']?></td>
-                                                <td><button type="button" class="btn btn-outline-secondary mt-1"><a href="editCustomer.php?id=<?=$row['customerID']?>">Edit</a></button> || 
-                                                <button type="button" class="btn btn-outline-danger mt-1"><a href="removeCustomer.php?id=<?= $row['customerID']?>">Delete</a></button></td>
+                                                <!-- <td><button type="button" class="btn btn-outline-secondary mt-1"><a href="editCustomer.php?id=<=$row['customerID']?>">Edit</a></button> || 
+                                                <button type="button" class="btn btn-outline-danger mt-1"><a href="removeCustomer.php?id=<= $row['customerID']?>">Delete</a></button></td> -->
                                 
                                             </tr>
                                 

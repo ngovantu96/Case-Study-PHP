@@ -1,6 +1,6 @@
 <?php
-        include '../header.php';
-        include '../database/connectDB.php';
+        include 'header.php';
+        include 'database/connectDB.php';
         // `productName`, `buyPrice`,`dissciption`,`pictureID`,`categoryID`
         if($_GET['id']){
             $productID = $_GET['id'];
@@ -41,6 +41,9 @@
                       <input type="text" class="form-control"  placeholder="Giá" name="buyPrice" value="<?= $row['buyPrice']?>">
                     </div>
                     <div class="form-group">
+                      <input type="number" class="form-control"  placeholder="Số Lượng" name="quantity" value="<?= $row['quantity']?>">
+                    </div>
+                    <div class="form-group">
                       <input type="text" class="form-control"  placeholder="Tiêu Đề" name="dissciption" value="<?= $row['dissciption']?>">
                     </div>
                     <div class="form-group">
@@ -53,7 +56,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control"  placeholder="Mã Hình Ảnh" name="pictureID" value="<?= $row['pictureID']?>">
+                      <input type="text" class="form-control"  placeholder="Mã Hình Ảnh" name="pictureID" value="<?= $row['image']?>">
                     </div>
                     <div class="form-group">
                      

@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include "../database/connectDB.php";
+    include 'header.php';
+    include "database/connectDB.php";
     $query = "SELECT * FROM `quanlybanhang`.`categorys`";
     $stmt = $pdo->query($query);
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +36,11 @@
                       <input type="text" class="form-control"  placeholder="Giá" name="buyPrice">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control"  placeholder="Tiêu Đề" name="dissciption">
+                      <input type="number" class="form-control"  placeholder="Số Lượng" name="quantity">
+                    </div>
+                    <div class="form-group">
+                      <!-- <input type="text" class="form-control"  placeholder="Tiêu Đề" name="dissciption"> -->
+                      <textarea name="dissciption" id="" cols="30" rows="10"  class="form-control" placeholder="tiêu đề"></textarea>
                     </div>
                     <div class="form-group">
                         <select class="form-control" id="sel1" name="categoryID" for="Thể Loại">
@@ -46,11 +50,17 @@
                         </select>
                     </div>
                     <div class="form-group">
-                      <input type="file" class="form-control"  name="url">
+                    <!-- <input type="text" class="form-control"  name="url">  -->
+                    <label for="">Ảnh Sản Phẩm</label>
+                      <input type="text" class="form-control"  name="image">
                     </div>
+                    <!-- <div class="form-group">
+                    <label for="">Ảnh Mô Tả</label>
+                      <input type="file" class="form-control"  name="images" multiple="multiple">
+                    </div>-->
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-block">Thêm Mới</button>
-                    </div>
+                    </div> 
                   </form>
                   
                 </div>
@@ -63,4 +73,4 @@
   </div>
 </body>
 </html>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>

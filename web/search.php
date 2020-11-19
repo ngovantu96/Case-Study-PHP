@@ -1,4 +1,5 @@
 <?php 
+session_start();
   include 'header.php';
   include 'database/connectionDB.php';
   if(isset($_GET['action']) && ($_GET['action'] == 'search')){
@@ -7,7 +8,7 @@
         // var_dump($searc);exit;
       }
     }
-	$query = "SELECT * FROM `quanlybanhang`.`sanphammoinhat` where `productName` LIKE '%$search%';";
+	$query = "SELECT * FROM `quanlybanhang`.`products` where `productName` LIKE '%$search%';";
 	$stmt = $pdo->query($query);
    
 ?>
@@ -28,31 +29,25 @@
 					<div class="block-heading">
 						<h2>Sản Phẩm </h2>
 					</div>
-					<div class="row ml-1">
+					<div class="row">
 						<?php
 						if(!$query){ ?>
 							<h3>không tìm thấy sản phẩm</h3>
 						<?php }else{ 
                              while($row = $stmt->fetch(PDO::FETCH_ASSOC )){ ?>
-							<div class="col-sm-4 col-md-3">
-								<div class="product-new">
-									<a class="product-img" href="">
-										<img src="<?= $row['url']?>" width="200px" height="250px">
-										<h5><?= $row['productName'] ?></h5>
+							<div class="col-md-3">
+								<div class="products">
+									<a class="product-img" href="detailproduct.php?id=<?= $row['productID'] ?>">
+										<img src="<?= $row['image'] ?>" width="200px" height="250px">
+										<p><?= $row['productName'] ?></p>
 									</a>
-									<p> Giá Bán : <?=number_format($row['buyPrice'])?>đ</p>
-									<div class="caption">		
-						         	<p>
-									 <a href="detailproduct.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
-									<button type="button" class="btn btn-outline-primary">Xem Chi Tiết</button>
-									</a> 
+									<p style="color :red"> <?= number_format($row['buyPrice']) ?>đ</p>
 									<a href="cart.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
-									<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
-									</a> 
-									</p>
-								</div>
+										<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
+									</a>
+								</div>	
+								<!-- End of /.products -->
 							</div>
-						</div>
 							<?php } ?>
 							 <?php } ?>
 						</div> 

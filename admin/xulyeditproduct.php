@@ -5,8 +5,9 @@
         $buyPrice = $_POST['buyPrice'];
         $dissciption = $_POST['dissciption'];
         $categoryID = $_POST['categoryID'];
-        $pictureID = $_POST['pictureID'];
+        $image = $_POST['image'];
         $productID = $_POST['productID'];
+        $quantity = $_POST['quantity'];
        
     
         $query = "UPDATE `quanlybanhang`.`products` 
@@ -14,7 +15,8 @@
             `buyPrice` = '$buyPrice',
             `dissciption` = '$dissciption',
             `categoryID` = '$categoryID',
-            `pictureID`='$pictureID'
+            `quantity` = '$quantity',
+            `image`='$image'
         WHERE (`productID` = '$productID');";
     }
    

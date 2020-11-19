@@ -6,7 +6,9 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : "";
 $quantity = isset($_GET['quantity']) ? (int)$_GET['quantity'] : 1;
 $action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
 
-$query = "SELECT * FROM `quanlybanhang`.`sanphammoinhat` WHERE `productID` = '$id'; ";
+$query = "SELECT * FROM `quanlybanhang`.`products` WHERE `productID` = '$id'; ";
+
+
 
 if ($query) {
     $stmt = $pdo->query($query);
@@ -16,14 +18,14 @@ if ($query) {
         if (isset($_SESSION['cart'][$id])) {
             $_SESSION['cart'][$id]['quantity'] += $quantity;
 
-            var_dump($_SESSION['cart'][$id]['quantity']);
-            die();
+            // var_dump($_SESSION['cart'][$id]['quantity']);
+            // die();
         } else {
             $item = [
                 'id' => $row['productID'],
                 'name' => $row['productName'],
                 'price' => $row['buyPrice'],
-                'image' => $row['url'],
+                'image' => $row['image'],
                 'quantity' => $quantity
             ];
         }
@@ -34,10 +36,9 @@ if ($query) {
 if($action == 'update'){
     $_SESSION['cart'][$id]['quantity'] = $quantity;
 }
-
 if($action == 'delete'){
     if(isset($_SESSION['cart'][$id])){
     unset($_SESSION['cart'][$id]);
     }  
  }
-header('location: view-cart.php');
+header('location: viewcart.php');

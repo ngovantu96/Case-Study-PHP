@@ -19,94 +19,33 @@
                 </div>
                 <div class="col-md-3 clearfix ml-3 mt-2">
                     <ul class="login">
-                        <li>
-                            <a data-toggle="modal" data-target="#myModal" href="#">
-                                <i class="fa fa-user mt-2"></i>
-                                Đăng Nhập/Đăng Kí
-                            </a>
+                        <li><i class="fa fa-user mt-2"></i> 
+                        <a  href="logout.php">
+                                <?php if(isset($_SESSION['username'])){ echo  $_SESSION['username']; } else{ ?>
+                        </a> 
+                        <a  href="register.php">
+                            <?php echo "Đăng Nhập/Đăng Kí"; } ?>
+                        </a>
                         </li>
                     </ul>
                 </div>
 
+                
+
                 <!-- gỏi hàng -->
                 <div class="col-md-2 ml-2 mt-1 " style="font-size: 25px;" id="cart">
                 <button type="button" class="btn btn-outline-success">
-                    <a href="view-cart.php "><i class="fa fa-shopping-cart mt-2"></i>
-                        <span>(
+                    <a href="viewcart.php "><i class="fa fa-shopping-cart mt-2"></i>
+                        <span>
                             <?php if (isset($_SESSION['cart'])) {
                                 echo count($_SESSION['cart']);
                                 } else {
-                                echo "0";
+                                echo "";
                                     };
                             ?>
-                        )</span>
+                        </span>
                 </button></a>		  			
                 </div>
-
-                <!-- <div class="col-md-3 clearfix">
-
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel"></h4>
-                                </div>
-                                <div class="modal-body clearfix">
-
-                                    <form action="#" method="post" id="create-account_form" class="std">
-                                        <fieldset>
-                                            <h3>Đăng Kí Tài Khoản</h3>
-                                            <div class="form_content clearfix">
-                                                <h4>vui lòng điền đầy đủ thông tin</h4>
-                                                <p class="text">
-                                                    <label for="email_create">Tên Đăng Nhập</label>
-                                                    <span>
-                                                        <input placeholder="E-mail-Tên Đăng kí" type="text" id="email_create" name="email_create" class="account_input ml-1">
-                                                    </span>
-                                                </p>
-                                                <p class="text">
-                                                    <label for="email_create">Mật Khẩu</label>
-                                                    <span>
-                                                        <input placeholder="Mật Khẩu" type="password" id="email_create" name="email_create" class="account_input ml-5">
-                                                    </span>
-                                                </p>
-                                                <p class="submit">
-                                                    <button class="btn btn-primary">Đăng Kí</button>
-                                                </p>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                    <form action="xulylogin.php" method="post" id="login_form" class="std">
-                                        <fieldset>
-                                            <h3>Bạn Đã Có Tài Khoản</h3>
-                                            <div class="form_content clearfix">
-                                                <p class="text">
-                                                    <label for="email">Tên Đăng Nhập</label>
-                                                    <span><input placeholder="E-mail-Tài Khoản" type="text" id="email" name="username" value="" class="account_input ml-1"></span>
-                                                </p>
-                                                <p class="text">
-                                                    <label for="passwd">Mật Khẩu</label>
-                                                    <span><input placeholder="Password" type="password" id="passwd" name="password" value="" class="account_input ml-5"></span>
-                                                </p>
-                                                <p class="lost_password">
-                                                    <a href="#popab-password-reset" class="popab-password-link">Quên Mật Khẩu</a>
-                                                </p>
-                                                <p class="submit">
-                                                    <button class="btn btn-success">Đăng Nhập</button>
-                                                </p>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> -->
-
     </section>
 
     <!-- thanh menu bar -->

@@ -13,31 +13,25 @@
 					</div>
 					<div class="row ml-1">
                         <?php 
-                            $query = "SELECT * FROM `quanlybanhang`.`trangphucnam` WHERE `categoryName` ='Trang Phục Nam';";
+                            $query = "SELECT * FROM `quanlybanhang`.`products` WHERE `categoryID` ='1';";
 							$stmt = $pdo->query($query);
 							
 							while($row = $stmt->fetch(PDO::FETCH_ASSOC )){  
                                 // var_dump($row['productID']);
                         ?>
                         
-							<div class="col-sm-4 col-md-3">
-								<div class="product-new">
-									<a class="product-img" href="">
-										<img src="<?= $row['url']?>" width="200px" height="250px">
-										<h5><?= $row['productName'] ?></h5>
+						<div class="col-md-3">
+								<div class="products">
+									<a class="product-img" href="detailproduct.php?id=<?= $row['productID'] ?>">
+										<img src="<?= $row['image'] ?>" width="200px" height="250px">
+										<p><?= $row['productName'] ?></p>
 									</a>
-									<p><?=number_format($row['buyPrice']) ?></p>
-									<div class="caption">		
-										<p>
-										<a href="detailproduct.php?id=<?=$row['productID'];?>" class="btn btn-default btn-transparent" role="button">
-										<button type="button" class="btn btn-outline-primary">Xem Chi Tiết</button>
-										</a> 
-										<a href="cart.php?id=<?=$row['productID'];?>" class="btn btn-default btn-transparent" role="button">
+									<p style="color :red"> <?= number_format($row['buyPrice']) ?>đ</p>
+									<a href="cart.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
 										<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
-										</a> 
-										</p>
-									</div>
-								</div>
+									</a>
+								</div>	
+								<!-- End of /.products -->
 							</div>
 							<?php } ?>			
 						</div> 				 

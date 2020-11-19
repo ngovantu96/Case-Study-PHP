@@ -4,26 +4,25 @@
   
     // $stmt = $pdo->query($query);
     // $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $productName = $_POST['productName'];
         $buyPrice = $_POST['buyPrice'];
         $dissciption = $_POST['dissciption'];
+        $quantity = $_POST['quantity'];
         $categoryID = $_POST['categoryID'];
-        $pictureID = $_POST['url'];
-        $query = "INSERT INTO `quanlybanhang`.`products` (`productName`, `buyPrice`,`dissciption`,`pictureID`,`categoryID`)
-        VALUES ('$productName', '$buyPrice','$dissciption','$pictureID','$categoryID')";
-    //     var_dump($query);die();
-        
-     }
+        $image = $_POST['image'];
 
-       
+        
+   $query  = "INSERT INTO `quanlybanhang`.`products` (`productName`, `buyPrice`, `dissciption`, `image`, `categoryID`, `quantity`)
+   VALUES ('$productName', '$buyPrice', '$dissciption', '$image', '$categoryID', '$quantity')";
 
        try{
-            $stmt = $pdo->query($query);
+            $pdo->query($query);
            if($query){
-               header("location: listproduct.php");
+               header("location: Listproduct.php");
            }
        }catch(Exception $e){
            echo $e->getMessage();
        }
-    
+    }

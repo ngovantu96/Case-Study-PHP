@@ -1,30 +1,31 @@
 <?php
- session_start();
+session_start();
 
 include 'header.php';
 include 'database/connectionDB.php';
+
 ?>
 
 <!-- SLIDER Start
     ================================================== -->
 
 <!-- <div class="slider-area"> -->
-<div class="container mt-10">
+<div class="container">
 	<div class="row">
-		<div class="col-md-6 col-lg-12">
+		<div class="col-lg-12">
 			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="images/slider3.jpg" class="d-block w-100" height="650px">
+						<img src="images/somi.jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/slider4.jpg" class="d-block w-100" height="650px">
+						<img src="images/122_t_20200519_THU(5).jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/slider3.jpg" class="d-block w-100" height="650px">
+						<img src="images/123_T_20200824_Trung(1).jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/slider4.jpg" class="d-block w-100" height="650px">
+						<img src="images/baocongso.jpg" class="d-block w-100" height="650px">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -54,43 +55,34 @@ include 'database/connectionDB.php';
 
 					<div class="row ml-1">
 						<?php
-						$query = "SELECT * FROM `quanlybanhang`.`sanphammoinhat` LIMIT 4";
+						$query = "SELECT * FROM `quanlybanhang`.`products` LIMIT 4";
 
 						$stmt = $pdo->query($query);
 
 						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 						?>
-							<div class="col-sm-4 col-md-3">
-								<div class="product-new">
-									<a class="product-img" href="">
-										<img src="<?= $row['url'] ?>" width="200px" height="250px">
-										<h5><?= $row['productName'] ?></h5>
+							<div class="col-md-3">
+								<div class="products">
+									<a class="product-img" href="detailproduct.php?id=<?= $row['productID'] ?>">
+										<img src="<?= $row['image'] ?>" width="200px" height="250px">
+										<p><?= $row['productName'] ?></p>
 									</a>
-									<p><?= number_format($row['buyPrice']) ?>đ</p>
-									<div class="caption">
-										<p>
-											<a href="detailproduct.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
-												<button type="button" class="btn btn-outline-primary">Xem Chi Tiết</button>
-											</a>
-											<a href="cart.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
-												<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
-											</a>
-										</p>
-									</div>
-								</div>
+									<p style="color :red"> <?= number_format($row['buyPrice']) ?>đ</p>
+									<a href="cart.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
+										<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
+									</a>
+								</div>	
+								<!-- End of /.products -->
 							</div>
-						<?php } ?>
-
+							<?php } ?>
+							</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-	</div>
 </section>
 <hr>
-
 <section id="product-list">
 	<div class="container">
 		<div class="row">
@@ -103,7 +95,7 @@ include 'database/connectionDB.php';
 		<div class="row">
 			<?php
 
-			$result = "SELECT count(productID) AS `total` FROM `quanlybanhang`.`sanphammoinhat`;";
+			$result = "SELECT count(productID) AS `total` FROM `quanlybanhang`.`products`;";
 			$row = $pdo->query($result)->fetch(PDO::FETCH_ASSOC);
 			$total_records = $row['total'];
 			$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -120,27 +112,24 @@ include 'database/connectionDB.php';
 			$start = ($current_page - 1) * $limit;
 			// die(var_dump($total_records));
 
-			$query = "SELECT * FROM `quanlybanhang`.`sanphammoinhat` LIMIT $start, $limit ";
+			$query = "SELECT * FROM `quanlybanhang`.`products` LIMIT $start, $limit ";
 			$stmt = $pdo->query($query);
 			//  var_dump($query);die();
 			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			?>
 				<div class="col-md-3">
 					<div class="products">
-						<a class="product-img" href="">
-							<img src="<?= $row['url'] ?>" width="200px" height="250px">
-							<h5><?= $row['productName'] ?></h5>
-						</a>
-						<p> <?= number_format($row['buyPrice']) ?>đ</p>
-						<a href="detailproduct.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
-							<button type="button" class="btn btn-outline-primary">Xem Chi Tiết</button>
-						</a>
+					<a class="product-img" href="detailproduct.php?id=<?= $row['productID'] ?>">
+						<img src="<?= $row['image'] ?>" width="200px" height="250px">
+						<p><?= $row['productName'] ?></p>
+					</a>
+						<p style="color :red"> <?= number_format($row['buyPrice']) ?>đ</p>
 						<a href="cart.php?id=<?= $row['productID'] ?>" class="btn btn-default btn-transparent" role="button">
 							<button type="button" class="btn btn-outline-primary">Mua Ngay</button>
 						</a>
 
 					</div>
-					<hr>
+					
 					<!-- End of /.products -->
 				</div>
 			<?php } ?>

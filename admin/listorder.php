@@ -1,11 +1,12 @@
 <?php 
     include 'header.php';
     include 'database/connectDB.php';
-    $query = "SELECT `orderCode`, `orderDate`,`discount`, `customerName`, `quantity`,`buyPrice`,`statusName`,`totalMonney` 
-    FROM (((`quanlybanhang`.`orders` inner join `quanlybanhang`.`customers` 
-    on `orders`.`customerID` = `customers`.`customerID`)
-    inner join `quanlybanhang`.`orderdetails` on `orderdetails`.`orderID` = `orders`.`orderID`)
-    inner join `quanlybanhang`.`status` on `orders`.`statusID`= `status`.`statusID`) ;";
+    $query = "SELECT `customerName`,`orderCode`, `orderDate`,`discount`,`statusName`,`quantity`,`buyPrice`,`totalMonney`
+    FROM (((`quanlybanhang`.`orders` INNER JOIN `quanlybanhang`.`customers` 
+    ON `orders`.`customerID` = `customers`.`customerID`)
+    INNER JOIN `quanlybanhang`.`orderdetails` ON `orderdetails`.`orderID` = `orders`.`orderID`)
+    INNER JOIN `quanlybanhang`.`status` ON `orders`.`statusID`= `status`.`statusID`) 
+    INNER JOIN `quanlybanhang`.`products` ON `products`.`productID`= `orderdetails`.`productID`;";
     $stmt = $pdo->query(($query));
 ?>
 <!DOCTYPE html>
@@ -41,10 +42,11 @@
                        <table class="table table-bordered">
                          <thead>
                          <tr>
-                        <th>Mã Đơn Hàng</th>
                         <th>Tên Khách Hàng</th>
+                        <th>Mã Đơn Hàng</th>
                         <th>Ngày Đặt Hàng</th>
                         <th>Số Lượng</th>
+                        <th>giá</th>
                         <th>Tổng Tiền</th>
                         <th>Giảm Giá</th>
                         <th>Trạng Thái</th>
@@ -55,18 +57,17 @@
                          <tbody>
                    
                     <?php
-                        while($row = $stmt->fetch(PDO::FETCH_ASSOC )){
+                        while($row = $stmt->fetchAll(PDO::FETCH_ASSOC )){
                      ?>
                             <tr>
                                 <td><?=$row['orderCode']?></td>
                                 <td><?=$row['customerName']?></td>
                                 <td><?=$row['orderDate']?></td>
                                 <td><?=$row['quantity']?></td>
-                                <td><?=$row['totalMonney']?></td>
+                                <td><?=$row['quantity']?></td>
+                                <td><?=$row['buyPrice']?></td>
                                 <td><?=$row['discount']?></td>
-                                <td><?=$row['statusName']?></td>
-                                
-                                <td><button type="button" class="btn btn-outline-secondary"><a href="editproduct.php?id=<?=$row['productID']?>">Edit</a></button> || 
+                                <td><?=$row['statusName']?></td> 
                                 <button type="button" class="btn btn-outline-danger"><a href="removeproduct.php?id=<?= $row['productID']?>">Delete</a></button></td>
                 
                             </tr>

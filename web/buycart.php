@@ -5,12 +5,13 @@ if(isset($_SERVER['REQUEST_METHOD'])=="POST"){
   $phone = $_POST['phone'];
   $address = $_POST['address'];
   $name = $_POST['name'];
+  $id =  $_POST['id'];
 
   $query = "INSERT INTO `quanlybanhang`.`customers` 
   (`email`, `phone`,`customerName`,`address`)
   VALUES ('$email', '$phone','$name','$address')";
 }
-// var_dump($query);die();
+$buycart = "INSERT INTO `quanlybanhang`.`orders`(`customerID`)VALUE ($id)";
 try{
     $stmt = $pdo->query($query);
    if($query){

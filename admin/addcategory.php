@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include '../database/connectDB.php';
+    include 'header.php';
+    include 'database/connectDB.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,6 @@
 <?php 
-    include '../header.php';
-    include '../database/connectDB.php';
+    include 'header.php';
+    include 'database/connectDB.php';
     if($_GET['id']){
         $categoryID = $_GET['id'];
         $query = "SELECT `categoryName` FROM `quanlybanhang`.`categorys` WHERE `categoryID` = '$categoryID';";
@@ -56,5 +56,5 @@
 
 </body>
 </html>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>
 

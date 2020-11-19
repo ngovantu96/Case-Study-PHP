@@ -1,5 +1,5 @@
-<?php include '../header.php';?>
-<?php include '../database/connectDB.php'; 
+<?php include 'header.php';?>
+<?php include 'database/connectDB.php'; 
         if($_GET['id']){
         $customerID = $_GET['id'];
         $query = "SELECT `customerName`,`email`,`password`,`address`,`phone`
@@ -66,4 +66,4 @@
       </div>
     </div>
   </div>
-  <?php include '../footer.php'; ?>
+  <?php include 'footer.php'; ?>
