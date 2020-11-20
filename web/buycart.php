@@ -23,23 +23,18 @@
         foreach($_SESSION['cart'] as $id=>$value){
           $qty = $value['quantity'];
           $price = $value['price'];
-          // $totalprice = $value['']
-          $InsertDetail = "INSERT INTO `quanlybanhang`.`orderdetails`(`orderID`,`productID`,`totalMonney`) 
-          VALUES('$orderID','$id','$qty*$price')";
+        }
+         $totalprice = $qty*$price;
+          $InsertDetail = "INSERT INTO `quanlybanhang`.`orderdetails`(`orderID`,`productID`,`quantityOrder`,`price`,`totalMonney`) 
+          VALUES('$orderID','$id','$qty','$price','$totalprice') ";
         //  var_dump($InsertDetail);die();
           $pdo->query($InsertDetail);
            
-        }
-      }
-      $buycart = "INSERT INTO `quanlybanhang`.`orders`(`customerID`)VALUE ($id)";
-      // var_dump($buycart);die();
-      try {
-        $stmt = $pdo->query($buycart);
-        if ($buycart) {
           header("location: index.php");
-        }
-      } catch (Exception $e) {
-        echo $e->getMessage();
       }
+      ?>
+  
+
      
-?>
+     
+
