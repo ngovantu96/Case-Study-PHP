@@ -98,7 +98,7 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
     <div class="container container-form mb-5">
         <div class="row">
             <div class="col-lg-12">
-            <form action="buy-cart.php" method="POST">
+            <form action="buycart.php" method="POST">
                     <div class="form-group">
                     <div class="form-group">
                         <input type="hidden" name="id">

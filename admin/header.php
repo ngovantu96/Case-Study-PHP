@@ -146,17 +146,11 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
     </ul>
-    <!-- Sidebar -->
+   
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
-        <!-- TopBar -->
+       
         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>

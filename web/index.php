@@ -16,16 +16,18 @@ include 'database/connectionDB.php';
 			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="images/somi.jpg" class="d-block w-100" height="650px">
+						 
+						 
+						<img src="https://en.chuu.co.kr/chuu-en/peko_p%20-%20(1).jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/122_t_20200519_THU(5).jpg" class="d-block w-100" height="650px">
+						<img src="https://en.chuu.co.kr/chuu-en/%EB%A0%88%EC%9D%B4%EC%A7%80%20%EC%84%A0%EB%8D%B0%EC%9D%B4%20-%20en.jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/123_T_20200824_Trung(1).jpg" class="d-block w-100" height="650px">
+						<img src="https://en.chuu.co.kr/images/main/banners/top-area/main-banner/jp/5kg.jpg" class="d-block w-100" height="650px">
 					</div>
 					<div class="carousel-item">
-						<img src="images/baocongso.jpg" class="d-block w-100" height="650px">
+						<img src="https://en.chuu.co.kr/images/main/banners/top-area/main-banner/en/b/2.jpg" class="d-block w-100" height="650px">
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

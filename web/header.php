@@ -38,6 +38,7 @@
                     <a href="viewcart.php "><i class="fa fa-shopping-cart mt-2"></i>
                         <span>
                             <?php if (isset($_SESSION['cart'])) {
+                                $qty = 0;
                                 echo count($_SESSION['cart']);
                                 } else {
                                 echo "";
