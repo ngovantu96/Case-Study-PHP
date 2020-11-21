@@ -1,24 +1,23 @@
 <?php 
    session_start();
-   include '../admin/database/connectDB.php';
+  include 'database/connectionDB.php';
    
    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-     $username = $_POST['username'];
+     $email = $_POST['email'];
      $password = $_POST['password'];
  
-     $query = "SELECT `email`, `password` FROM `quanlybanhang`.`customers` 
-     WHERE `email`='$username'  AND `password`='$password';";
-      
-     $stmt = $pdo->query($query);
-     $row = $stmt->fetch();
+     $query = "SELECT `email`, `password` FROM `customers` 
+     WHERE `email`='$email'  AND `password`='$password';";
      
-          if($username == $row['email'] && $password ==  $row['password']){
-             $_SESSION['user'] = $row;
-            
-         }
-             header('Location: product.php');
+     $stmt = $pdo->query($query);
+     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+     
+          if($email == $row['email'] && $password ==  $row['password']){
+             $_SESSION['username'] = $row;
+            //     var_dump( $_SESSION['username']);die();
+             header('Location: trangchu.php');
          } else{
-            header('location: index.php');
+            header('location: login.php');
+         }
    }
-   
 ?> 

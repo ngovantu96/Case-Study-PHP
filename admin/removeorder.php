@@ -1,19 +1,17 @@
 <?php 
-    include 'database.php';
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $query = "DELETE * FROM (((`quanlybanhang`.`orders` INNER JOIN `quanlybanhang`.`customers` 
-        ON `orders`.`customerID` = `customers`.`customerID`)
-        INNER JOIN `quanlybanhang`.`orderdetails` ON `orderdetails`.`orderID` = `orders`.`orderID`)
-        INNER JOIN `quanlybanhang`.`status` ON `orders`.`statusID`= `status`.`statusID`) 
-        INNER JOIN `quanlybanhang`.`products` ON `products`.`productID`= `orderdetails`.`productID` WHERE `ID` = '$id'";
-    }
-    try{
-        $pdo->query($query);
-         if($query){
-             header("location: listorder.php");
+    include 'database/connectDB.php';
+    if(isset($_GET['delete'])){
+        $delete = $_GET['delete'];
+        $query = "DELETE * FROM `quanlybanhang`.`oderdetails`
+         WHERE `order_id` = '$delete' AND `productID` = '$productID';";
+       
+        try{
+            $pdo->query($query);
+             if($query){
+                 header("location: listorder.php");
+             }
+         }catch(Exception $e){
+            echo $e->getMessage();
          }
-     }catch(Exception $e){
-        echo $e->getMessage();
-     } 
+      }
 ?>

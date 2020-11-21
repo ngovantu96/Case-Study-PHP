@@ -138,18 +138,18 @@ include 'database/connectionDB.php';
 			<div class="pagination-bottom mt-3 ml-5">
 				<ul class="pagination">
 					<?php if ($current_page > 1 && $total_page > 1) { ?>
-						<li class="page-item"><a class="page-link" href="index.php?page=<?= ($current_page - 1) ?>">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="trangchu.php?page=<?= ($current_page - 1) ?>">Previous</a></li>
 					<?php } ?>
 					<?php for ($i = 1; $i <= $total_page; $i++) { ?>
 						<?php if ($i == $current_page) { ?>
 							<li class="page-item"><a class="page-link" href="#"><?= $i ?></a></li>
 						<?php	 } else { ?>
-							<li class="page-item"><a class="page-link" href="index.php?page=<?= $i ?>"><?= $i ?></a></li>
+							<li class="page-item"><a class="page-link" href="trangchu.php?page=<?= $i ?>"><?= $i ?></a></li>
 						<?php } ?>
 					<?php } ?>
 					<?php
 					if ($current_page < $total_page && $total_page > 1) { ?>
-						<li class="page-item"><a class="page-link" href="index.php?page=<?= ($current_page + 1) ?>">Next</a></li>
+						<li class="page-item"><a class="page-link" href="trangchu.php?page=<?= ($current_page + 1) ?>">Next</a></li>
 					<?php } ?>
 				</ul>
 			</div>

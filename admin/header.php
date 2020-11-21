@@ -53,7 +53,7 @@
       </li>
       <!-- nhân viên -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="employees/employee.php" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fas fa-user-friends"></i><span class="app-menu__label ml-2">Nhân Viên</span>
         </a>
@@ -89,7 +89,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tables</h6>
             <a class="collapse-item" href="listcategory.php">Thể Loại</a>
-            <a class="collapse-item" href="Listpicture.php">Hình Ảnh</a>
             <a class="collapse-item" href="Listproduct.php">Danh Sách Sản Phẩm</a>
           </div>
         </div>

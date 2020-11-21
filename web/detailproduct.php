@@ -39,4 +39,4 @@
     </div>
     <!-- <div class="block-heading">
     </div> -->
-    <!-- <php include 'footer.php'; ?> -->
+    <?php include 'footer.php'; ?>

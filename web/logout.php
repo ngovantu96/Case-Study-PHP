@@ -2,7 +2,8 @@
     session_start();
     if(isset($_SESSION['username'])){
         unset($_SESSION['username']);
-        header('loaction:index.php');
+        // var_dump($_SESSION['username']);die();
+        header('location:trangchu.php');
     }
     
 ?>

@@ -124,8 +124,8 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
           
         </div>
         </div>
-        <!-- <php include 'footer.php'; ?>   -->
+       
         </div>  
         <?php } ?>
-          
+        <?php include 'footer.php'; ?>          
 

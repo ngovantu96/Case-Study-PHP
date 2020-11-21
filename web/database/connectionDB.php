@@ -1,6 +1,6 @@
 <?php
         $host = 'localhost:8080';
-        $dbname = 'classicmodels';
+        $dbname = 'quanlybanhang';
         $user = 'root';
         $pass = '123456789';
     

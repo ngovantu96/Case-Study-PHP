@@ -3,6 +3,7 @@
     if($_GET['id']){
         $customerID = $_GET['id'];
         $query = "DELETE  FROM `quanlybanhang`.`customers` WHERE `customerID` = '$customerID';";
+        // var_dump($query);die();
         // $stmt = $pdo->query($query);
         // $row = $stmt->fetch(PDO::FETCH_ASSOC);
             try{

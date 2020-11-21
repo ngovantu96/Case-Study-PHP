@@ -154,6 +154,7 @@
     margin: auto;
     /* background-color: #ecf0f1; */
     text-align: center;
+    /* display: flex; */
 }
 .container-detail{
     width: 80%;
