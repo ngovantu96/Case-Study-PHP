@@ -4,16 +4,13 @@ sử dụng công nghệ ngôn nhữ lập trình html, css, bootstrap, php và 
 - thành phần : + trang admin 
                + trang client
 + trang  admin(dashboar) cho phép : + thêm sản phẩm, sửa sản phẩm ,xóa sản phẩm, 
-                          + thêm nhân viên, sửa nhân viên, xóa nhân viên,
-                          + 
-                          + theo dõi đơn hàng, danh sách khách hàng.
-+ trang khách hàng : trang chủ 
+                          + thêm khách hàng,sửa,xóa khách hàng
+                          + xem thông tin đơn hàng
++ trang client : trang chủ 
                       ++Navbar.
-                      ++Sản phẩm mới.
-                      ++Sản phẩmlượt xem nhiều nhất.
-                      ++Sản phẩm bán chạy.
-                      ++Footer
-                     Sản Phẩm : 
+                       ++Footer 
+                      ++danh sách sản phẩm
+                      ++đăng nhập,đăng kí, mua sản phẩm
                       sản phẩm theo thể loại.
                      giỏ hàng :
                      mua hàng, thanh toán.
