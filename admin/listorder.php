@@ -53,8 +53,8 @@ $stmt = $pdo->query($query);
           <td><?=$value['status']?></td>
           <td><?= $value['quantityOrder'] ?></td>
           <td><?= number_format($value['price']) ?></td>
-          <td><button type="button" class="btn btn-outline-danger"><a href="removeorder.php?delete=<?= $value['order_id']; ?>">Delete</a></button>||
-            <button type="button" class="btn btn-outline-secondary"><a href="confirm.php?confirm=<?= $value['order_id']; ?>">confirm</a></button></td>
+          <td><button type="button" class="btn btn-outline-danger"><a href="removeorder.php?delete=<?= $value['order_id']?>&productID=<?= $value['productID']?>">Delete</a></button>||
+            <button type="button" class="btn btn-outline-secondary"><a href="confirm.php?confirm=<?= $value['order_id']?>">confirm</a></button></td>
         </tr>
         <?php endforeach ;?>
     </table>

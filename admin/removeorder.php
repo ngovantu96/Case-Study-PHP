@@ -1,10 +1,12 @@
 <?php 
     include 'database/connectDB.php';
-    if(isset($_GET['delete'])){
+    if(isset($_GET['delete']) && isset($_GET['productID'])){
         $delete = $_GET['delete'];
-        $query = "DELETE * FROM `quanlybanhang`.`oderdetails`
+        $productID =  $_GET['productID'];
+        // var_dump($productID);die();
+        $query = "DELETE FROM `orderdetails`
          WHERE `order_id` = '$delete' AND `productID` = '$productID';";
-       
+    //    var_dump($query);die();
         try{
             $pdo->query($query);
              if($query){

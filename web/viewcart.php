@@ -13,7 +13,7 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
                0px"></div>
                <div class="cartNull">
                    <h4>Giỏ hàng của bạn đang trống</h4>
-                  <div class="buycart"><a href="index.php"><p>Tếp tục mua hàng</p></a></div>
+                  <div class="buycart"><a href="trangchu.php"><p>Tếp tục mua hàng</p></a></div>
                 </div>
         </div>
        
