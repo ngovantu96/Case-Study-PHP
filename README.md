@@ -13,7 +13,7 @@ sử dụng công nghệ ngôn nhữ lập trình html, css, bootstrap, php và 
                       ++đăng nhập,đăng kí, mua sản phẩm
                       sản phẩm theo thể loại.
                      giỏ hàng :
-                     mua hàng, thanh toán.
+                     mua hàng,
 
 <img src="database5.png">
 
