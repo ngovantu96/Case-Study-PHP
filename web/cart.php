@@ -6,7 +6,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : "";
 $quantity = isset($_GET['quantity']) ? (int)$_GET['quantity'] : 1;
 $action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
 
-$query = "SELECT * FROM `quanlybanhang`.`products` WHERE `productID` = '$id'; ";
+$query = "SELECT * FROM `products` WHERE `productID` = '$id'; ";
 
 
 

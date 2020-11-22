@@ -14,20 +14,20 @@ if (isset($_SERVER['REQUEST_METHOD']) == "POST") {
   $pdo->query($query);
   $customerID = $pdo->lastInsertId();
   //  var_dump($customerID);die();
-  $InsertOrder = "INSERT INTO `quanlybanhang`.`orders`(customerID) VALUES ('$customerID')";
+  $InsertOrder = "INSERT INTO `orders`(customerID) VALUES ('$customerID')";
   $pdo->query($InsertOrder);
   $orderID = $pdo->lastInsertId();
 
   // var_dump($orderID);die();
 
   foreach ($_SESSION['cart'] as $id => $value) {
-    $conn = "select * from `quanlybanhang`.`products` where `productID` = '$id';";
+    $conn = "select * from `products` where `productID` = '$id';";
     $product = $pdo->query($conn);
     $row = $product->fetch(PDO::FETCH_ASSOC);
     $qty = $value['quantity'];
     $price = $row['buyPrice'];
 
-    $InsertDetail = "INSERT INTO `quanlybanhang`.`orderdetails`(`order_id`,`productID`,`quantityOrder`,`price`) 
+    $InsertDetail = "INSERT INTO `orderdetails`(`order_id`,`productID`,`quantityOrder`,`price`) 
           VALUES('$orderID','$id','$qty','$price') ";
     $pdo->query($InsertDetail);
   }

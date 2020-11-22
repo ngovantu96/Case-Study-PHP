@@ -14,7 +14,7 @@
     </div>
        
         <?php 
-            $query = "SELECT * FROM `quanlybanhang`.`products` WHERE `productID`='$productID'";
+            $query = "SELECT * FROM `products` WHERE `productID`='$productID'";
            
             $stmt = $pdo->query($query);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);

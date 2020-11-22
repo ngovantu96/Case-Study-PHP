@@ -2,7 +2,7 @@
     include "header.php";
     include "database/connectDB.php";
     $query = "SELECT `employeeName`,`phone`,`email`,`address`,`levelID`,`lastLogin`, `loginName`,`password` 
-    FROM `quanlybanhang`.`employees`;";
+    FROM `employees`;";
    
     $stmt = $pdo->query($query);
 ?>

@@ -2,7 +2,7 @@
     include "header.php";
     include "database/connectDB.php";
 
-    $query = "SELECT * FROM quanlybanhang.customers";
+    $query = "SELECT * FROM customers";
     $stmt = $pdo->query($query);
 ?>
 <!DOCTYPE html>

@@ -10,7 +10,7 @@
         $quantity = $_POST['quantity'];
        
     
-        $query = "UPDATE `quanlybanhang`.`products` 
+        $query = "UPDATE `products` 
         SET `productName` = '$productName',
             `buyPrice` = '$buyPrice',
             `dissciption` = '$dissciption',

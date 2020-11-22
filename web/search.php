@@ -8,7 +8,7 @@ session_start();
         // var_dump($searc);exit;
       }
     }
-	$query = "SELECT * FROM `quanlybanhang`.`products` where `productName` LIKE '%$search%';";
+	$query = "SELECT * FROM `products` where `productName` LIKE '%$search%';";
 	$stmt = $pdo->query($query);
    
 ?>

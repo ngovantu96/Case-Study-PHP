@@ -57,7 +57,7 @@ include 'database/connectionDB.php';
 
 					<div class="row ml-1">
 						<?php
-						$query = "SELECT * FROM `quanlybanhang`.`products` LIMIT 4";
+						$query = "SELECT * FROM `products` LIMIT 4";
 
 						$stmt = $pdo->query($query);
 
@@ -97,7 +97,7 @@ include 'database/connectionDB.php';
 		<div class="row">
 			<?php
 
-			$result = "SELECT count(productID) AS `total` FROM `quanlybanhang`.`products`;";
+			$result = "SELECT count(productID) AS `total` FROM `products`;";
 			$row = $pdo->query($result)->fetch(PDO::FETCH_ASSOC);
 			$total_records = $row['total'];
 			$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -114,7 +114,7 @@ include 'database/connectionDB.php';
 			$start = ($current_page - 1) * $limit;
 			// die(var_dump($total_records));
 
-			$query = "SELECT * FROM `quanlybanhang`.`products` LIMIT $start, $limit ";
+			$query = "SELECT * FROM `products` LIMIT $start, $limit ";
 			$stmt = $pdo->query($query);
 			//  var_dump($query);die();
 			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

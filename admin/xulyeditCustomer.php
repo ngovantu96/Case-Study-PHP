@@ -8,7 +8,7 @@
         $Address = $_POST['Address'];
         $NumberPhone = $_POST['NumberPhone'];
     
-        $query = "UPDATE `quanlybanhang`.`customers` 
+        $query = "UPDATE `customers` 
         SET `customerName` = '$customerName',
             `email` = '$Email',
             `password` = '$Password',

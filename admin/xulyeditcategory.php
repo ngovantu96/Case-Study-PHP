@@ -3,7 +3,7 @@
     if($_SERVER["REQUEST_METHOD"] =="POST"){
         $categoryID = $_POST['categoryID'];
         $categoryName = $_POST['categoryName'];
-        $query = "UPDATE `quanlybanhang`.`categorys` 
+        $query = "UPDATE `categorys` 
         SET `categoryName` = '$categoryName'
         WHERE (`categoryID` = '$categoryID');";
     }

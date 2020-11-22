@@ -21,7 +21,7 @@ $cart = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
         <hr>
         <div class="row ml-1">
                         <?php 
-                            $query = "SELECT * FROM `quanlybanhang`.`products` WHERE `categoryID` ='1';";
+                            $query = "SELECT * FROM `products` WHERE `categoryID` ='1';";
 							$stmt = $pdo->query($query);
 							while($row = $stmt->fetch(PDO::FETCH_ASSOC )){  
                                 // var_dump($row['productID']);

@@ -3,7 +3,7 @@
     if(isset($_GET['id'])){
         $productID = $_GET['id'];
 
-        $query = "DELETE FROM `quanlybanhang`.`products` WHERE `productID`='$productID';";
+        $query = "DELETE FROM `products` WHERE `productID`='$productID';";
         
     }
     try{

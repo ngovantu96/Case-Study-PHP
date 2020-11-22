@@ -3,7 +3,7 @@
     include 'database/connectDB.php';
     if($_GET['id']){
         $categoryID = $_GET['id'];
-        $query = "SELECT `categoryName` FROM `quanlybanhang`.`categorys` WHERE `categoryID` = '$categoryID';";
+        $query = "SELECT `categoryName` FROM `categorys` WHERE `categoryID` = '$categoryID';";
         $stmt = $pdo->query($query);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         // var_dump($row);die();

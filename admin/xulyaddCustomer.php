@@ -1,6 +1,6 @@
 <?php
       include 'database/connectDB.php';
-      $query = "SELECT * FROM quanlybanhang.customers";
+      $query = "SELECT * FROM customers";
       $stmt = $pdo->query($query);
       $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
@@ -13,7 +13,7 @@
           $NumberPhone = $_POST['NumberPhone'];
     
   
-          $query = "INSERT INTO `quanlybanhang`.`customers` (`customerName`, `email`,`password`,`address`,`phone`)
+          $query = "INSERT INTO `customers` (`customerName`, `email`,`password`,`address`,`phone`)
           VALUES ('$customerName', '$Email','$Password','$Address','$NumberPhone')";
         
     }

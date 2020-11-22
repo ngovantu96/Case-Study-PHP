@@ -3,7 +3,7 @@
         if($_GET['id']){
         $customerID = $_GET['id'];
         $query = "SELECT `customerName`,`email`,`password`,`address`,`phone`
-         FROM `quanlybanhang`.`customers` WHERE `customerID` = '$customerID';";
+         FROM `customers` WHERE `customerID` = '$customerID';";
         $stmt = $pdo->query($query);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 

@@ -7,7 +7,7 @@ session_start();
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT `employeeName`, `password` FROM `quanlybanhang`.`employees` 
+    $query = "SELECT `employeeName`, `password` FROM `employees` 
     WHERE `employeeName`='$username'  AND `password`='$password';";
      
     $stmt = $pdo->query($query);

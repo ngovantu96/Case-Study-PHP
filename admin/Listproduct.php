@@ -2,7 +2,7 @@
     include 'header.php';
     include 'database/connectDB.php';
     
-    $result ="SELECT count(productID) AS `total` FROM `quanlybanhang`.`products`;";
+    $result ="SELECT count(productID) AS `total` FROM `products`;";
     // $result ="SELECT * FROM `quanlybanhang`.`products`;";
     $stmt = $pdo->query($result);
     $row = $pdo->query($result)->fetch(PDO::FETCH_ASSOC);
@@ -22,8 +22,8 @@
     $start = ($current_page - 1) * $limit;
 
     $query = "SELECT `productID`,`productName`,`buyPrice`,`dissciption`,`image`,`categoryName`,`quantity` 
-    FROM (`quanlybanhang`.`products` 
-    INNER JOIN `quanlybanhang`.`categorys` ON `categorys`.`categoryID` = `products`.`categoryID`) ORDER BY `productID` ASC LIMIT $start,$limit ";
+    FROM (`products` 
+    INNER JOIN `categorys` ON `categorys`.`categoryID` = `products`.`categoryID`) ORDER BY `productID` ASC LIMIT $start,$limit ";
     $stmt = $pdo->query($query);
    
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

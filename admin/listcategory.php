@@ -1,7 +1,7 @@
 <?php 
     include 'header.php';
     include 'database/connectDB.php';
-    $query = "SELECT * FROM quanlybanhang.categorys";
+    $query = "SELECT * FROM categorys";
     $stmt = $pdo->query($query);
   ?>
 <!DOCTYPE html>
