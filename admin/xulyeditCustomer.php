@@ -15,6 +15,7 @@
             `address` = '$Address',
             `phone`='$NumberPhone'
         WHERE (`customerID` = '$customerID');";
+        // var_dump($query);die();
     }
        
      try{
