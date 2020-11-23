@@ -15,5 +15,5 @@ sử dụng công nghệ ngôn nhữ lập trình html, css, bootstrap, php và 
                      giỏ hàng :
                      mua hàng,
 
-<img src="database5.png">
+<img src="imga_database/database.png">
 
