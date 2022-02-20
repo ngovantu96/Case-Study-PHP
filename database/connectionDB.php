@@ -1,8 +1,8 @@
 <?php
-        $host = 'localhost:8080';
-        $dbname = 'quanlybanhang';
+        $host = 'localhost:3306';
+        $dbname = 'timi_store';
         $user = 'root';
-        $pass = '123456789';
+        $pass = '';
     
         $dns = 'mysql:host='.$host.';dbname='.$dbname;
         $pdo = new PDO($dns, $user, $pass);
